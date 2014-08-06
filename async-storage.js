@@ -173,7 +173,7 @@
     setItem: setItem,
     removeItem: removeItem,
     clear: clear,
-    count: length,
+    length: length,
     key: key
   };
 

@@ -1,6 +1,6 @@
 package async;
 
-typedef Callback0 = Void -> Void;
+private typedef Callback0 = Void -> Void;
 
 @:native("asyncStorage")
 extern class Storage {
@@ -13,7 +13,9 @@ extern class Storage {
 
   static function clear(callback:Callback0):Void;
 
-  static function count(callback:Int -> Void):Void;
+  // static function length(callback:Int -> Void):Void; /* haxe don't compiles correctly this */
+  // Thanks "Andy Li" https://groups.google.com/d/msg/haxelang/G54xtEznveQ/DuJHncGSTKMJ
+  inline static function length(callback:Int -> Void):Void return untyped __js__("asyncStorage.length")(callback);
 
   static function key(n:Int, callback:Dynamic -> Void):Void;
 }
