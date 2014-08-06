@@ -1,6 +1,6 @@
 package ;
 
-import async.*;
+import async.Storage;
 
 class Test {
 
